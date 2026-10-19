@@ -1,0 +1,62 @@
+[
+  {
+    "id": "f01",
+    "user": "What time is my pill?",
+    "level": "low"
+  },
+  {
+    "id": "f02",
+    "user": "Thanks, that's clear.",
+    "level": "low"
+  },
+  {
+    "id": "f03",
+    "user": "Okay, remind me later.",
+    "level": "low"
+  },
+  {
+    "id": "f04",
+    "user": "Good morning.",
+    "level": "low"
+  },
+  {
+    "id": "f05",
+    "user": "That's not quite what I meant.",
+    "level": "medium"
+  },
+  {
+    "id": "f06",
+    "user": "Can you say that again, simpler?",
+    "level": "medium"
+  },
+  {
+    "id": "f07",
+    "user": "I asked about the morning one, not the evening.",
+    "level": "medium"
+  },
+  {
+    "id": "f08",
+    "user": "Hmm, that isn't right.",
+    "level": "medium"
+  },
+  {
+    "id": "f09",
+    "user": "This isn't working. I give up.",
+    "level": "high"
+  },
+  {
+    "id": "f10",
+    "user": "I don't understand any of this. Why does it keep doing this?",
+    "level": "high"
+  },
+  {
+    "id": "f11",
+    "user": "You're not listening to me. I've said it three times.",
+    "level": "high"
+  },
+  {
+    "id": "f12",
+    "user": "Never mind, forget it, it's useless.",
+    "level": "high"
+  }
+]

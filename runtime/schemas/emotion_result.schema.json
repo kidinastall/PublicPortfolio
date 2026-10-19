@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "emotion_result",
+  "type": "object", "additionalProperties": false,
+  "required": ["emotion", "confidence"],
+  "properties": {
+    "emotion": { "enum": ["frustrated", "happy", "confused", "anxious", "skeptical", "overwhelmed",
+                           "angry", "distressed", "hopeful", "confident", "excited", "neutral"] },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+  }
+}

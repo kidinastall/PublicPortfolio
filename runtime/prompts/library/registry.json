@@ -1,6 +1,42 @@
 {
   "modules": [
     {
+      "id": "ambiguity_classifier",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "design + engineering",
+      "model_tier": "small",
+      "output": "runtime/schemas/level_result.schema.json",
+      "eval": "evals/prompts/ambiguity_cases.json",
+      "max_tokens": 300,
+      "tokens": 139
+    },
+    {
+      "id": "emotion_classifier",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "design + clinical reviewer",
+      "model_tier": "small",
+      "output": "runtime/schemas/emotion_result.schema.json",
+      "eval": "evals/prompts/emotion_cases.json",
+      "max_tokens": 450,
+      "tokens": 248
+    },
+    {
+      "id": "friction_classifier",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "design + engineering",
+      "model_tier": "small",
+      "output": "runtime/schemas/level_result.schema.json",
+      "eval": "evals/prompts/friction_cases.json",
+      "max_tokens": 300,
+      "tokens": 139
+    },
+    {
       "id": "intent_classifier",
       "version": "1.0.0",
       "kind": "skill",
@@ -38,7 +74,7 @@
     },
     {
       "id": "tone_modulation",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "kind": "skill",
       "status": "active",
       "owner_role": "design + clinical reviewer",
@@ -46,7 +82,19 @@
       "output": "runtime/schemas/ui_response.schema.json",
       "eval": "evals/prompts/style_cases.json",
       "max_tokens": 400,
-      "tokens": 167
+      "tokens": 189
+    },
+    {
+      "id": "widget_selection",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "design + engineering",
+      "model_tier": "small",
+      "output": "runtime/schemas/components_result.schema.json",
+      "eval": "evals/prompts/widget_cases.json",
+      "max_tokens": 350,
+      "tokens": 185
     }
   ]
 }

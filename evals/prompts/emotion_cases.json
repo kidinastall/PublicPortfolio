@@ -1,0 +1,122 @@
+[
+  {
+    "id": "e01",
+    "user": "This keeps not working and I'm tired of it.",
+    "emotion": "frustrated"
+  },
+  {
+    "id": "e02",
+    "user": "I already asked this twice.",
+    "emotion": "frustrated"
+  },
+  {
+    "id": "e03",
+    "user": "I had a lovely walk with my son today.",
+    "emotion": "happy"
+  },
+  {
+    "id": "e04",
+    "user": "Today was a good day.",
+    "emotion": "happy"
+  },
+  {
+    "id": "e05",
+    "user": "I don't understand what this button does.",
+    "emotion": "confused"
+  },
+  {
+    "id": "e06",
+    "user": "Wait, which pill is this one?",
+    "emotion": "confused"
+  },
+  {
+    "id": "e07",
+    "user": "What if I forget to take it? I keep worrying.",
+    "emotion": "anxious"
+  },
+  {
+    "id": "e08",
+    "user": "I'm nervous about the appointment tomorrow.",
+    "emotion": "anxious"
+  },
+  {
+    "id": "e09",
+    "user": "Are you sure that's right? I don't trust this.",
+    "emotion": "skeptical"
+  },
+  {
+    "id": "e10",
+    "user": "How do I know this will actually remind me?",
+    "emotion": "skeptical"
+  },
+  {
+    "id": "e11",
+    "user": "There's too much on this screen. I can't keep up.",
+    "emotion": "overwhelmed"
+  },
+  {
+    "id": "e12",
+    "user": "Everything is happening at once.",
+    "emotion": "overwhelmed"
+  },
+  {
+    "id": "e13",
+    "user": "Stop telling me what to do!",
+    "emotion": "angry"
+  },
+  {
+    "id": "e14",
+    "user": "I'm sick of this thing. Leave me alone.",
+    "emotion": "angry"
+  },
+  {
+    "id": "e15",
+    "user": "I'm scared and I don't know what's happening.",
+    "emotion": "distressed"
+  },
+  {
+    "id": "e16",
+    "user": "Please, I can't stand this, I need someone.",
+    "emotion": "distressed"
+  },
+  {
+    "id": "e17",
+    "user": "I hope the new routine helps me remember more.",
+    "emotion": "hopeful"
+  },
+  {
+    "id": "e18",
+    "user": "Maybe this will make mornings easier.",
+    "emotion": "hopeful"
+  },
+  {
+    "id": "e19",
+    "user": "I've got it, I know exactly when to take it.",
+    "emotion": "confident"
+  },
+  {
+    "id": "e20",
+    "user": "No problem, I can handle this one myself.",
+    "emotion": "confident"
+  },
+  {
+    "id": "e21",
+    "user": "My grandson is visiting tomorrow! I can't wait!",
+    "emotion": "excited"
+  },
+  {
+    "id": "e22",
+    "user": "I did it! I finished the whole week!",
+    "emotion": "excited"
+  },
+  {
+    "id": "e23",
+    "user": "What time is the appointment?",
+    "emotion": "neutral"
+  },
+  {
+    "id": "e24",
+    "user": "Please write that down.",
+    "emotion": "neutral"
+  }
+]

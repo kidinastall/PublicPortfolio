@@ -2,3 +2,4 @@
 {"id":"ADR-002","date":"2026-10-05","status":"active","supersedes":null,"scope":"runtime/handoff","decision":"Handoffs reference template IDs (HT-nnn); the model never writes handoff text."}
 {"id":"ADR-003","date":"2026-10-12","status":"active","supersedes":null,"scope":"design-system","decision":"Build agent may not add components; propose via ADR, humans edit design_tokens.json."}
 {"id":"ADR-004","date":"2026-10-19","status":"active","supersedes":null,"scope":"runtime/prompts","decision":"Prompts are versioned one-job modules in runtime/prompts/library; routing is a table (routing.json), handoff wording is reviewed templates."}
+{"id":"ADR-005","date":"2026-10-19","status":"active","supersedes":null,"scope":"runtime/signals","decision":"Emotion, friction and ambiguity label the turn; adaptation.json decides the change. Emotion is turn-only, never triggers a handoff. Disclosure and fallbacks are fixed copy."}

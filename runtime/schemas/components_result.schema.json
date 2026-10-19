@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "components_result",
+  "type": "object", "additionalProperties": false,
+  "required": ["components"],
+  "properties": {
+    "components": {
+      "type": "array", "maxItems": 3,
+      "items": { "type": "object", "additionalProperties": false, "required": ["type", "purpose"],
+                 "properties": { "type": { "type": "string" }, "purpose": { "type": "string", "maxLength": 40 } } }
+    }
+  }
+}

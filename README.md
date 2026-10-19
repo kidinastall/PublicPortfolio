@@ -28,7 +28,7 @@ make cost            # modeled token cost, v1 vs v5
 │   └── decisions/                   ADR-nnn.md + ledger.jsonl (machine-readable digest)
 ├── runtime/                         the companion itself
 │   ├── prompts/                     system prompt, red lines, changelog
-│   │   └── library/                 versioned prompt modules, routing table, handoff templates
+│   │   └── library/                 prompt modules, routing + adaptation tables, approved copy
 │   ├── schemas/ui_response.schema.json
 │   ├── hooks/                       pre_phi_mask · pre_crisis_router · pre_med_change_router
 │   │                                post_red_line_guard · post_ui_validator
@@ -51,8 +51,9 @@ make cost            # modeled token cost, v1 vs v5
 
 ## Honest limits
 
-- `evals/prompts/test_live_intent.py` runs the real classifier prompt against a real model, but it is
-  written, not yet run: it needs an API key and was not executed in this repo's offline suite.
+- `test_live_intent.py` and `test_live_signals.py` run the real classifier prompts against a real model, but
+  they are written, not yet run: they need an API key and were not executed in this repo's offline suite.
+  Until they are run, no accuracy figure for any classifier is claimed.
 - The model is injected, so tests replay recorded model outputs. They prove the hooks
   catch known failures; they do not measure a live model's failure rate.
 - Cost figures are a model of the architecture's shape, not billed spend.

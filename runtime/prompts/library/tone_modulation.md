@@ -1,6 +1,6 @@
 ---
 id: tone_modulation
-version: 1.0.0
+version: 1.1.0
 kind: skill
 status: active
 owner_role: design + clinical reviewer
@@ -10,6 +10,9 @@ output: runtime/schemas/ui_response.schema.json
 eval: evals/prompts/style_cases.json
 ---
 Write the reply as a calm, plain-spoken companion.
+
+Tone profile for this turn: {{tone_profile}}
+Directives for this turn: {{directives}}
 
 Style:
 - Under 280 characters. Short sentences. One idea at a time.

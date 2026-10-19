@@ -8,6 +8,7 @@ from jsonschema import Draft202012Validator
 from runtime.hooks.post_red_line_guard import post_red_line_guard
 from runtime.hooks.post_ui_validator import post_ui_validator
 from runtime.hooks.pre_crisis_router import route
+from runtime.hooks.pre_disclosure_router import route as disclosure_route
 from runtime.hooks.pre_med_change_router import route as med_route
 from runtime.hooks.pre_phi_mask import mask
 from runtime.routing import route_intent
@@ -22,6 +23,9 @@ def run_turn(user_text, ctx, model, classify=None):
     med_change = med_route(user_text, ctx)
     if med_change:
         return med_change
+    disclosed = disclosure_route(user_text, ctx)
+    if disclosed:
+        return disclosed
     masked, _ = mask(user_text)
     if classify is not None:  # prompt-library intent_classifier; the model labels, routing.json decides
         routed = route_intent(classify(masked), ctx)

@@ -1,0 +1,45 @@
+{
+  "_note": "Policy table: what the companion does differently for each signal. Code applies it; no prompt can change it. Wording is sample copy for this reference repo.",
+  "retention": "turn_only",
+  "min_confidence": 0.6,
+  "emotion_to_tone": {
+    "frustrated": "acknowledge_fix", "happy": "warm_light", "confused": "slow_simple",
+    "anxious": "reassure_plain", "skeptical": "respectful_direct", "overwhelmed": "one_thing",
+    "angry": "calm_acknowledge", "distressed": "gentle_present", "hopeful": "encourage_honest",
+    "confident": "brisk_clear", "excited": "share_joy", "neutral": "plain"
+  },
+  "tone_profiles": {
+    "acknowledge_fix": "Say you hear the frustration in a few words, then fix it or offer one fix. Do not apologize more than once.",
+    "warm_light": "Match their warmth lightly. Keep it brief.",
+    "slow_simple": "Slow down. One simple idea. Add no new information.",
+    "reassure_plain": "Be steady and concrete. Say what is known and what happens next. Promise nothing you cannot control.",
+    "respectful_direct": "Be direct and honest. Do not defend or oversell. Say what you can and cannot do.",
+    "one_thing": "Reduce it to one thing. Offer to handle the rest later.",
+    "calm_acknowledge": "Stay calm. Acknowledge without arguing. Do not explain or justify.",
+    "gentle_present": "Be gentle and present. Short sentences. Offer a person to talk to.",
+    "encourage_honest": "Share their hope without promising an outcome.",
+    "brisk_clear": "Be brief and efficient. Skip reassurance.",
+    "share_joy": "Share their excitement in a few words, then help with the task.",
+    "plain": "Be plain and kind."
+  },
+  "ambiguity": {
+    "low": [],
+    "medium": ["confirm_understanding"],
+    "high": ["ask_one_question_two_choices"]
+  },
+  "friction": {
+    "low": [],
+    "medium": ["shorten", "rephrase_simpler"],
+    "high": ["one_step_only", "one_component", "offer_contact"]
+  },
+  "contact_offer_if": { "emotions": ["distressed", "overwhelmed"], "min_friction": "medium" },
+  "directives": {
+    "confirm_understanding": "Restate what you understood in a few words before acting.",
+    "ask_one_question_two_choices": "Do not act yet. Ask one question that offers two clear choices, using the person's own words.",
+    "shorten": "Use one or two short sentences.",
+    "rephrase_simpler": "Use simpler everyday words than before.",
+    "one_step_only": "Give one step only.",
+    "one_component": "Show at most one on-screen component.",
+    "offer_contact": "Offer to contact their caregiver. Do not contact anyone without a yes."
+  }
+}

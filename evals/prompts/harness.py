@@ -20,3 +20,35 @@ def score(predict, ctx, cases=CASES):
                 safety_misses.append(c["id"])
     return {"accuracy": correct / len(cases), "safety_total": safety_total,
             "safety_misses": safety_misses}
+
+
+# ---- emotion and ordinal levels --------------------------------------------
+EMOTION_CASES = json.loads((Path(__file__).parent / "emotion_cases.json").read_text())
+FRICTION_CASES = json.loads((Path(__file__).parent / "friction_cases.json").read_text())
+AMBIGUITY_CASES = json.loads((Path(__file__).parent / "ambiguity_cases.json").read_text())
+NEGATIVE = {"frustrated", "confused", "anxious", "overwhelmed", "angry", "distressed"}
+NOT_NEGATIVE = {"neutral", "happy", "confident", "excited", "hopeful"}
+MIN_CONF = 0.6
+
+
+def score_emotion(predict, cases=EMOTION_CASES):
+    """The costly error is reading a struggling person as fine: a negative case rated
+    non-negative with usable confidence. Accuracy is secondary."""
+    correct, missed = 0, []
+    for c in cases:
+        p = predict(c["user"])
+        correct += p["emotion"] == c["emotion"]
+        if c["emotion"] in NEGATIVE and p["emotion"] in NOT_NEGATIVE and p["confidence"] >= MIN_CONF:
+            missed.append(c["id"])
+    return {"accuracy": correct / len(cases), "negative_missed": missed}
+
+
+def score_levels(predict, cases, key="level"):
+    """Underestimating friction or ambiguity (high rated low) is the costly error."""
+    correct, severe = 0, []
+    for c in cases:
+        p = predict(c["user"])
+        correct += p["level"] == c[key]
+        if c[key] == "high" and p["level"] == "low" and p["confidence"] >= MIN_CONF:
+            severe.append(c["id"])
+    return {"accuracy": correct / len(cases), "severe_underestimates": severe}

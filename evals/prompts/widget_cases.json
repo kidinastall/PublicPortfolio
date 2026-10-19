@@ -1,0 +1,47 @@
+[
+  {
+    "id": "w1",
+    "intent": "med_taken_log",
+    "expect_any_of": [
+      "ActionCard"
+    ]
+  },
+  {
+    "id": "w2",
+    "intent": "reminder_snooze",
+    "expect_any_of": [
+      "TimePickerGroup",
+      "ActionCard"
+    ]
+  },
+  {
+    "id": "w3",
+    "intent": "caregiver_contact",
+    "expect_any_of": [
+      "ActionCard"
+    ]
+  },
+  {
+    "id": "w4",
+    "intent": "note_capture",
+    "expect_any_of": [
+      "ActionCard"
+    ]
+  },
+  {
+    "id": "w5",
+    "intent": "schedule_query",
+    "expect_any_of": [
+      "AlertBanner",
+      "none"
+    ]
+  },
+  {
+    "id": "w6",
+    "intent": "orientation_distress",
+    "expect_any_of": [
+      "AlertBanner",
+      "none"
+    ]
+  }
+]

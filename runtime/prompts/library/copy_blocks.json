@@ -1,0 +1,16 @@
+{
+  "_note": "Approved, reusable text. The model never writes these; code selects them by ID. Sample copy for this reference repo; production copy is approved by a clinical reviewer.",
+  "blocks": {
+    "DISC-001": { "kind": "disclosure", "title": "I'm an AI companion", "body": "I'm not a person.",
+                  "text": "I'm an AI companion, not a person. I can help with reminders and notes. I can't give medical advice." },
+    "DISC-002": { "kind": "disclosure",
+                  "text": "I can remind you, keep notes, and contact your caregiver. Decisions about your medicine are for your prescriber." },
+    "FB-001":   { "kind": "fallback", "text": "I couldn't answer that just now. A person will follow up." },
+    "FB-002":   { "kind": "fallback", "text": "I couldn't show that safely. A person will follow up." },
+    "LM-001":   { "kind": "limit",    "text": "That's outside what I can help with. Would you like me to ask your caregiver?" },
+    "GR-001":   { "kind": "greeting", "text": "Hello. How can I help?" },
+    "CF-001":   { "kind": "confirm",  "text": "Okay. I've written that down." },
+    "CF-002":   { "kind": "confirm",  "text": "Got it. I'll remind you." },
+    "CL-001":   { "kind": "closing",  "text": "I'm here whenever you need me." }
+  }
+}

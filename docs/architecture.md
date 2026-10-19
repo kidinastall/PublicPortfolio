@@ -192,3 +192,29 @@ owner role, a token budget, a model tier and an eval. Four ship today: `intent_c
 the metric that matters is not accuracy but *safety misses*: labeled risky cases that would reach
 the model. Tests prove the harness itself catches a lazy classifier, passes a perfect one, and
 treats an unsure one as safe. `test_live_intent.py` plugs in a real model.
+
+### Signals and adaptation
+
+Four classifiers read each turn: intent, emotion, friction and ambiguity. They only label. What changes
+is decided by `adaptation.json`, so no prompt can reroute, stay silent or escalate on its own.
+
+| Signal | Values | What it changes | Costly error the eval measures |
+| --- | --- | --- | --- |
+| Intent | 12 labels | Routing (`routing.json`) | Risky case that reaches the model |
+| Emotion | 11 + neutral | Tone profile for this turn | Struggling person read as fine |
+| Friction | low / medium / high | Shorter, simpler, one step, offer a person | High friction rated low |
+| Ambiguity | low / medium / high | Confirm, or ask one question with two choices | High ambiguity rated low |
+
+Design choices worth defending:
+- **Friction is measured from behavior as well as language.** Repeated intents, failed renders and
+  "I give up" phrasing are counted in code, and the higher of the two wins.
+- **An unsure ambiguity rating is treated as more ambiguous, never less.** An unsure emotion rating
+  is treated as neutral. Each uncertainty fails toward the safer behavior.
+- **Emotion never triggers a handoff.** It changes tone and, with friction, adds an offer to contact
+  a caregiver that requires a yes. Only `routing.json` hands off.
+- **Emotion is turn-only.** The summarizer is forbidden from inferring mood, and the adaptation policy
+  declares `retention: turn_only`.
+- **Disclosure is never generated.** "Are you a real person?" gets fixed copy (`DISC-001`) from a
+  pre-generation check, and a banner shows the same fact at session start.
+- **Widget prompts do not name components.** The allowlist is rendered into the prompt at runtime, and
+  a test fails if a module hard-codes a component name (ADR-003).

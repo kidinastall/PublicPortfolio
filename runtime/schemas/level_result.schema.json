@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "level_result",
+  "type": "object", "additionalProperties": false,
+  "required": ["level", "confidence"],
+  "properties": {
+    "level": { "enum": ["low", "medium", "high"] },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+  }
+}
