@@ -1,0 +1,31 @@
+{
+  "version": "2.3.0",
+  "components": {
+    "AlertBanner": {
+      "props": {
+        "severity": { "enum": ["info", "reminder", "urgent"] },
+        "title":    { "type": "string", "maxLength": 60 },
+        "body":     { "type": "string", "maxLength": 140 }
+      },
+      "required": ["severity", "title"]
+    },
+    "ActionCard": {
+      "props": {
+        "title":  { "type": "string", "maxLength": 48 },
+        "action": { "enum": ["confirm_taken", "snooze", "call_contact", "open_note"] },
+        "ref_id": { "type": "string", "pattern": "^(dose|ct|note)_[a-z0-9]{8}$" }
+      },
+      "required": ["title", "action"]
+    },
+    "TimePickerGroup": {
+      "props": {
+        "label":    { "type": "string", "maxLength": 40 },
+        "slot_ids": { "type": "array", "maxItems": 4,
+                      "items": { "type": "string", "pattern": "^slot_[a-z0-9]{8}$" } }
+      },
+      "required": ["label", "slot_ids"]
+    }
+  },
+  "aliases": { "Toast": "AlertBanner", "Card": "ActionCard", "TimePicker": "TimePickerGroup" },
+  "forbidden_terms": ["dose", "dosage", "mg", "mcg", "strength", "quantity"]
+}

@@ -1,0 +1,8 @@
+[
+  {"id": "what-time", "user": "What time is my evening pill?",
+   "response": "Your evening pill is at 8:00 PM.", "expected_times": ["20:00"]},
+  {"id": "did-i", "user": "Did I take my morning pill?",
+   "response": "Yes, you took it at 8:00 AM.", "expected_times": ["08:00"]},
+  {"id": "no-time", "user": "Can you remind me about my appointment?",
+   "response": "I can remind you. Which appointment?", "expected_times": []}
+]

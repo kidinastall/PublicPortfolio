@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ui_response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["say", "components", "handoff", "meta"],
+  "properties": {
+    "say": { "type": "string", "maxLength": 280 },
+    "components": {
+      "type": "array", "maxItems": 3,
+      "items": {
+        "type": "object", "required": ["type"],
+        "properties": { "type": { "type": "string" }, "props": { "type": "object" } }
+      }
+    },
+    "handoff": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "object", "additionalProperties": false,
+          "required": ["to", "template_id"],
+          "properties": {
+            "to": { "enum": ["caregiver", "prescriber", "emergency"] },
+            "template_id": { "type": "string", "pattern": "^HT-[0-9]{3}$" } } }
+      ]
+    },
+    "meta": {
+      "type": "object", "required": ["intent", "confidence"],
+      "properties": {
+        "intent": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 } }
+    }
+  }
+}
