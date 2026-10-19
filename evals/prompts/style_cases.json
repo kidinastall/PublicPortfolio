@@ -1,0 +1,45 @@
+{
+  "good": [
+    "That sounds unsettling. Today is Monday, and Sam is in the kitchen. Shall I let your daughter know?",
+    "Your evening pill is at 8:00 PM. Would you like a reminder?"
+  ],
+  "bad": [
+    {
+      "say": "You're wrong, it's not Tuesday. Remember what I told you?",
+      "violations": [
+        "correction",
+        "memory_test"
+      ]
+    },
+    {
+      "say": "What day do you think it is? Do you remember? Shall I call someone?",
+      "violations": [
+        "memory_test",
+        "too_many_questions"
+      ]
+    },
+    {
+      "say": "Your pill is at 9:30 PM.",
+      "violations": [
+        "time_not_in_facts"
+      ]
+    },
+    {
+      "say": "Would you like a reminder? It is all fine.",
+      "violations": [
+        "question_not_last"
+      ]
+    },
+    {
+      "say": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "violations": [
+        "too_long"
+      ]
+    }
+  ],
+  "facts": {
+    "times": [
+      "20:00"
+    ]
+  }
+}

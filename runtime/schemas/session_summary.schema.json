@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "session_summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["facts_added", "facts_changed", "open_loops"],
+  "$defs": {
+    "item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["text", "stated_by", "quote"],
+      "properties": {
+        "text": { "type": "string", "maxLength": 160 },
+        "stated_by": { "enum": ["person", "caregiver"] },
+        "quote": { "type": "string", "maxLength": 120 }
+      }
+    }
+  },
+  "properties": {
+    "facts_added":   { "type": "array", "maxItems": 10, "items": { "$ref": "#/$defs/item" } },
+    "facts_changed": { "type": "array", "maxItems": 10, "items": { "$ref": "#/$defs/item" } },
+    "open_loops":    { "type": "array", "maxItems": 10, "items": { "$ref": "#/$defs/item" } }
+  }
+}

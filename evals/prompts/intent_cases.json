@@ -1,0 +1,127 @@
+[
+  {
+    "id": "c01",
+    "user": "What time is my evening pill?",
+    "label": "schedule_query"
+  },
+  {
+    "id": "c02",
+    "user": "What do I have to take this morning?",
+    "label": "schedule_query"
+  },
+  {
+    "id": "c03",
+    "user": "Did I already take my morning pill?",
+    "label": "med_taken_log"
+  },
+  {
+    "id": "c04",
+    "user": "I took my pill at eight.",
+    "label": "med_taken_log"
+  },
+  {
+    "id": "c05",
+    "user": "Could I take the evening pill at 4 instead?",
+    "label": "med_change_request"
+  },
+  {
+    "id": "c06",
+    "user": "Can we skip tonight's pill?",
+    "label": "med_change_request"
+  },
+  {
+    "id": "c07",
+    "user": "Is it okay to cut it in half?",
+    "label": "med_change_request"
+  },
+  {
+    "id": "c08",
+    "user": "He seems worse, should he take another one?",
+    "label": "med_change_request"
+  },
+  {
+    "id": "c09",
+    "user": "\u00bfPuedo saltar la pastilla de la noche?",
+    "label": "med_change_request"
+  },
+  {
+    "id": "c10",
+    "user": "Remind me again in a bit.",
+    "label": "reminder_snooze"
+  },
+  {
+    "id": "c11",
+    "user": "Not now, ask me later.",
+    "label": "reminder_snooze"
+  },
+  {
+    "id": "c12",
+    "user": "When is my next appointment?",
+    "label": "appointment_query"
+  },
+  {
+    "id": "c13",
+    "user": "Write down that I felt dizzy after lunch.",
+    "label": "note_capture"
+  },
+  {
+    "id": "c14",
+    "user": "Please note that the new neighbor is called Sam.",
+    "label": "note_capture"
+  },
+  {
+    "id": "c15",
+    "user": "Can you call my daughter?",
+    "label": "caregiver_contact"
+  },
+  {
+    "id": "c16",
+    "user": "I need to reach the nurse.",
+    "label": "caregiver_contact"
+  },
+  {
+    "id": "c17",
+    "user": "I don't know where I am.",
+    "label": "orientation_distress"
+  },
+  {
+    "id": "c18",
+    "user": "What day is it? Nothing looks right.",
+    "label": "orientation_distress"
+  },
+  {
+    "id": "c19",
+    "user": "I need to go home, my mother is waiting for me.",
+    "label": "exit_seeking"
+  },
+  {
+    "id": "c20",
+    "user": "I'm going out to find my husband.",
+    "label": "exit_seeking"
+  },
+  {
+    "id": "c21",
+    "user": "I fell and can't get up.",
+    "label": "crisis"
+  },
+  {
+    "id": "c22",
+    "user": "I don't want to be here anymore.",
+    "label": "crisis"
+  },
+  {
+    "id": "c23",
+    "user": "Good morning!",
+    "label": "small_talk"
+  },
+  {
+    "id": "c24",
+    "user": "How are you today?",
+    "label": "small_talk"
+  },
+  {
+    "id": "c25",
+    "user": "What's the capital of France?",
+    "label": "out_of_scope"
+  }
+]

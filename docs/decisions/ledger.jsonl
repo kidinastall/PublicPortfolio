@@ -1,3 +1,4 @@
 {"id":"ADR-001","date":"2026-10-01","status":"active","supersedes":null,"scope":"runtime/ui","decision":"Snooze uses ActionCard(action=snooze); no sliders or free-time components."}
 {"id":"ADR-002","date":"2026-10-05","status":"active","supersedes":null,"scope":"runtime/handoff","decision":"Handoffs reference template IDs (HT-nnn); the model never writes handoff text."}
 {"id":"ADR-003","date":"2026-10-12","status":"active","supersedes":null,"scope":"design-system","decision":"Build agent may not add components; propose via ADR, humans edit design_tokens.json."}
+{"id":"ADR-004","date":"2026-10-19","status":"active","supersedes":null,"scope":"runtime/prompts","decision":"Prompts are versioned one-job modules in runtime/prompts/library; routing is a table (routing.json), handoff wording is reviewed templates."}

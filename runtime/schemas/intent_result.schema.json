@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "intent_result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["label", "confidence"],
+  "properties": {
+    "label": { "enum": ["schedule_query", "med_taken_log", "med_change_request", "reminder_snooze",
+                         "appointment_query", "note_capture", "caregiver_contact",
+                         "orientation_distress", "exit_seeking", "crisis", "small_talk", "out_of_scope"] },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+  }
+}

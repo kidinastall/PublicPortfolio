@@ -170,3 +170,25 @@ Reproduce with `make cost`. These are modeled figures, not billed spend.
 | Small model for classification and summarizing | Frontier-model rates on routing and offline work |
 | One repair retry with an errors-only prompt | Retry loops and resending the design system |
 | `say` capped at 280 chars, `maxItems: 3` | Long outputs, the most expensive tokens |
+
+## 7. Prompt library
+
+Prompts are modules, not paragraphs. Each lives in `runtime/prompts/library/` with a version, an
+owner role, a token budget, a model tier and an eval. Four ship today: `intent_classifier`,
+`tone_modulation`, `orientation_support`, `session_summarizer`.
+
+| Design choice | Why |
+| --- | --- |
+| One job per module | A module that does two things cannot be tested for either |
+| Model labels, `routing.json` decides | A label can be wrong; where it goes cannot be argued with by context |
+| Low confidence routes to a person (HT-011) | An unsure classifier is a safe classifier |
+| Handoff wording is reviewed copy, referenced by ID | Generated wording is unreviewed advice |
+| No times, doses or contact details inside modules | Facts arrive from scripts as inputs, so a module cannot go stale or be wrong |
+| Style lint (`style_check.py`) on generative output | The checkable parts of tone (length, one question, no corrections, no invented times) need no judgment |
+| Registry generated from frontmatter | A hand-edited index drifts |
+| Changelog row per `id@version`, enforced by test | "How have they changed" has an answer for every module |
+
+**Eval harness.** `evals/prompts/harness.py` scores any predictor end to end through routing, so
+the metric that matters is not accuracy but *safety misses*: labeled risky cases that would reach
+the model. Tests prove the harness itself catches a lazy classifier, passes a perfect one, and
+treats an unsure one as safe. `test_live_intent.py` plugs in a real model.

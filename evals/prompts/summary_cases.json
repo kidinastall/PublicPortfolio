@@ -1,0 +1,54 @@
+{
+  "valid": {
+    "facts_added": [
+      {
+        "text": "Likes tea in the afternoon",
+        "stated_by": "person",
+        "quote": "I always have tea at three"
+      }
+    ],
+    "facts_changed": [
+      {
+        "text": "Says the pharmacy is on Oak Street",
+        "stated_by": "person",
+        "quote": "the pharmacy is on Oak"
+      }
+    ],
+    "open_loops": [
+      {
+        "text": "Remind about pharmacy call Thursday",
+        "stated_by": "caregiver",
+        "quote": "call the pharmacy Thursday"
+      }
+    ]
+  },
+  "invalid": [
+    {
+      "facts_added": [
+        {
+          "text": "Seems depressed",
+          "mood": "low",
+          "stated_by": "person",
+          "quote": "..."
+        }
+      ],
+      "facts_changed": [],
+      "open_loops": []
+    },
+    {
+      "facts_added": [
+        {
+          "text": "Lives alone",
+          "stated_by": "neighbor",
+          "quote": "..."
+        }
+      ],
+      "facts_changed": [],
+      "open_loops": []
+    },
+    {
+      "facts_added": [],
+      "facts_changed": []
+    }
+  ]
+}

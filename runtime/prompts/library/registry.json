@@ -1,0 +1,52 @@
+{
+  "modules": [
+    {
+      "id": "intent_classifier",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "design + clinical reviewer",
+      "model_tier": "small",
+      "output": "runtime/schemas/intent_result.schema.json",
+      "eval": "evals/prompts/intent_cases.json",
+      "max_tokens": 450,
+      "tokens": 266
+    },
+    {
+      "id": "orientation_support",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "design + clinical reviewer",
+      "model_tier": "frontier",
+      "output": "runtime/schemas/ui_response.schema.json",
+      "eval": "evals/prompts/style_cases.json",
+      "max_tokens": 350,
+      "tokens": 157
+    },
+    {
+      "id": "session_summarizer",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "engineering + clinical reviewer",
+      "model_tier": "small",
+      "output": "runtime/schemas/session_summary.schema.json",
+      "eval": "evals/prompts/summary_cases.json",
+      "max_tokens": 500,
+      "tokens": 165
+    },
+    {
+      "id": "tone_modulation",
+      "version": "1.0.0",
+      "kind": "skill",
+      "status": "active",
+      "owner_role": "design + clinical reviewer",
+      "model_tier": "frontier",
+      "output": "runtime/schemas/ui_response.schema.json",
+      "eval": "evals/prompts/style_cases.json",
+      "max_tokens": 400,
+      "tokens": 167
+    }
+  ]
+}

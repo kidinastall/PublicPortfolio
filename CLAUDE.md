@@ -35,6 +35,9 @@ in `docs/decisions/`. Do not create a new component.
 - Log it in `runtime/prompts/CHANGELOG.md`: what, why, eval run.
 - A new red line gets a new ID and a case in `evals/red_lines/`.
   A rule without a test does not merge. (`guard_safety_prompt.py` enforces this.)
+- Prompt modules live in `runtime/prompts/library/`. One job each. Changing one means: bump
+  `version`, add an `id@version` row to the changelog, update its eval. Never put times, doses,
+  or routing decisions in a module; those come from scripts and `routing.json`.
 - Tokens added to `companion.system.md` need a cost note; `make evals-fast`
   fails when the static prompt exceeds its budget.
 

@@ -9,7 +9,7 @@ All data is synthetic. No real product, employer, patient or organization appear
 
 ```bash
 pip install -r requirements.txt
-make evals-fast      # 39 tests: red lines, UI contract, context budget, build hooks, cost
+make evals-fast      # red lines, UI contract, context budget, prompt library, build hooks, cost
 make cost            # modeled token cost, v1 vs v5
 ```
 
@@ -27,7 +27,8 @@ make cost            # modeled token cost, v1 vs v5
 │   ├── architecture.md              the design rationale (read this next)
 │   └── decisions/                   ADR-nnn.md + ledger.jsonl (machine-readable digest)
 ├── runtime/                         the companion itself
-│   ├── prompts/                     system prompt, numbered red lines, changelog
+│   ├── prompts/                     system prompt, red lines, changelog
+│   │   └── library/                 versioned prompt modules, routing table, handoff templates
 │   ├── schemas/ui_response.schema.json
 │   ├── hooks/                       pre_phi_mask · pre_crisis_router · pre_med_change_router
 │   │                                post_red_line_guard · post_ui_validator
@@ -50,6 +51,8 @@ make cost            # modeled token cost, v1 vs v5
 
 ## Honest limits
 
+- `evals/prompts/test_live_intent.py` runs the real classifier prompt against a real model, but it is
+  written, not yet run: it needs an API key and was not executed in this repo's offline suite.
 - The model is injected, so tests replay recorded model outputs. They prove the hooks
   catch known failures; they do not measure a live model's failure rate.
 - Cost figures are a model of the architecture's shape, not billed spend.

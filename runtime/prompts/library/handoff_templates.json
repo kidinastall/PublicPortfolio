@@ -1,0 +1,8 @@
+{
+  "_note": "Sample copy for this reference repo. In production, every template is written and approved by a clinical reviewer; the model only ever picks an ID.",
+  "HT-001": { "to": "emergency",  "text": "This sounds urgent. I'm alerting emergency help and your caregiver now. Stay where you are if it is safe." },
+  "HT-010": { "to": "caregiver",  "text": "I'm letting your caregiver know you'd like to go out, so someone can be with you." },
+  "HT-011": { "to": "caregiver",  "text": "I'm not sure I understood. I'm asking your caregiver to check in with you." },
+  "HT-014": { "to": "prescriber", "text": "Changes to your medicine are best decided by your prescriber. I'm sending them your question." },
+  "HT-020": { "to": "caregiver",  "text": "I couldn't show that safely. A person will follow up with you." }
+}
