@@ -53,7 +53,7 @@ def test_invented_slot_is_rejected(ctx):
     assert out["components"][0]["props"]["slot_ids"][0] in ctx.schedule.slot_ids()
 
 
-def test_alias_is_normalised_without_a_retry(ctx):
+def test_alias_is_normalized_without_a_retry(ctx):
     r = reply("Done.", [{"type": "Card", "props": {"title": "Open note", "action": "open_note"}}])
     out = post_ui_validator(copy.deepcopy(r), ctx, lambda _p: (_ for _ in ()).throw(AssertionError))
     assert out["components"][0]["type"] == "ActionCard"

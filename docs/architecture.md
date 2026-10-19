@@ -28,7 +28,7 @@ flowchart LR
 
 Ordered by how hard each layer is to ignore: hooks and tests, numbered red lines, decision
 records, `CLAUDE.md`, then the current request. The root `CLAUDE.md` stays short; a rule
-that keeps growing moves to a skill (needs judgement) or a hook (must always run).
+that keeps growing moves to a skill (needs judgment) or a hook (must always run).
 
 | Version | Change | Failure that forced it |
 | --- | --- | --- |
@@ -78,7 +78,7 @@ failure.
 
 1. Must the answer be identical every time? **Script.** The model phrases the result, never computes it.
 2. Must it run whether or not the model decides to call it? **Hook.** It sits in the pipeline.
-3. Does it need judgement over ambiguous language? **Skill**, with its output checked by a hook.
+3. Does it need judgment over ambiguous language? **Skill**, with its output checked by a hook.
 
 | | Script | Hook | Skill |
 | --- | --- | --- | --- |
@@ -89,10 +89,10 @@ failure.
 
 - **"Did I take my evening pill?" → script.** `med_schedule.py` computes what is due; the model only
   phrases it. Date and interval arithmetic is where fluent models are confidently wrong.
-- **A user types a neighbour's phone number into a note → hook.** `pre_phi_mask.py` runs before any
+- **A user types a neighbor's phone number into a note → hook.** `pre_phi_mask.py` runs before any
   model call or log write. A skill would only run if the model chose it.
 - **"I need to go home, my mother is waiting" → skill.** Orientation, distress or exit-seeking is a
-  judgement call; a classifier skill labels it and a tone skill shapes a validating reply. Low
+  judgment call; a classifier skill labels it and a tone skill shapes a validating reply. Low
   confidence or an exit-seeking label triggers a fixed-template handoff, and post hooks still check output.
 
 ## 4. Design-system invariant
@@ -160,13 +160,13 @@ v5 is a capped ~3,900 tokens, of which ~1,300 is a prompt-cached prefix billed a
 | 12 turns | 52,500 | 32,760 | −38% |
 | 40 turns | 315,000 | 109,200 | −65% |
 
-Reproduce with `make cost`. These are modelled figures, not billed spend.
+Reproduce with `make cost`. These are modeled figures, not billed spend.
 
 | Lever | What it removed |
 | --- | --- |
 | Summaries + slot caps instead of replayed history | Quadratic growth with session length |
 | Prompt caching of the static prefix | Full-price re-reads of the same tokens each turn |
 | Scripts for schedules and time parsing | Reasoning tokens spent on arithmetic |
-| Small model for classification and summarising | Frontier-model rates on routing and offline work |
+| Small model for classification and summarizing | Frontier-model rates on routing and offline work |
 | One repair retry with an errors-only prompt | Retry loops and resending the design system |
 | `say` capped at 280 chars, `maxItems: 3` | Long outputs, the most expensive tokens |

@@ -1,4 +1,4 @@
-"""Modelled (not billed) input-token cost. Replace with measured numbers from evals/cost."""
+"""Modeled (not billed) input-token cost. Replace with measured numbers from evals/cost."""
 V1_PROMPT, V1_PER_TURN = 3000, 250
 V5_CONTEXT, V5_CACHED, CACHE_RATE = 3900, 1300, 0.10
 

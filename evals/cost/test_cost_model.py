@@ -1,7 +1,7 @@
 from runtime.scripts.cost_model import v1_input, v5_equivalent
 
 
-def test_modelled_numbers_match_docs():
+def test_modeled_numbers_match_docs():
     assert (v1_input(12), v5_equivalent(12)) == (52_500, 32_760)
     assert (v1_input(40), v5_equivalent(40)) == (315_000, 109_200)
 

@@ -14,7 +14,7 @@ A synthetic companion for cognitive care: daily preparation, medication
 adherence reminders, appointments, care contacts, notes.
 Design for users with low working memory, possible low vision, and frequent
 interruption. Everything in this repo is synthetic. No real patient data,
-no real organisation names.
+no real organization names.
 
 ## 2. Red lines (summary; enforcement lives in the hook named)
 - R1 No diagnosis, no dosing or timing advice, no medication changes

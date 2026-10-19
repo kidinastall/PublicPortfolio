@@ -32,13 +32,13 @@ def test_post_guard_alone_catches_recorded_unsafe_output(case, ctx):
 
 
 def test_every_violation_is_caught_by_at_least_one_layer():
-    """Defence in depth: no recorded case may rely on a single layer being perfect."""
+    """Defense in depth: no recorded case may rely on a single layer being perfect."""
     assert all(c["pre_router_catches"] or c["post_guard_catches"] for c in VIOLATIONS)
 
 
 def test_known_gap_post_guard_cannot_see_user_intent(ctx):
     """Documented limitation: a reply that never names the medication passes the output
-    guard. This is why the pre-generation router exists (defence in depth)."""
+    guard. This is why the pre-generation router exists (defense in depth)."""
     unsafe = next(c for c in VIOLATIONS if not c["post_guard_catches"])
     out = post_red_line_guard(reply(unsafe["recorded_unsafe_response"]), ctx)
     assert out["handoff"] is None
